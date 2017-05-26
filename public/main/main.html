@@ -1,0 +1,40 @@
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js "></script>
+
+
+
+<div class="row">
+  <div class="col-sm-4">
+  <canvas  class="whiteboard" style="border-style: outset"></canvas>
+  <div>
+    <button type = "submit" ng-click = "restoreCanvas()">Restore</button>
+  </div>
+  </div>
+  <div class="col-sm-4">
+<h2> Hello <b>{{username}}</b></h2></div>
+
+<!-- chat screen -->
+<div class="col-sm-4">
+<form ng-submit='send()'>
+      <div class='input-group'>
+        <input ng-model='message' type='text' placeholder="Text message">
+        <span class='input-group-btn'>
+          <input class='input-sm btn btn-primary' type='submit' value='Send'>
+        </span>
+      </div>
+    </form>
+    <br>
+    <div>
+      <ul>
+        <!-- Display all the messages and by whom it's sent -->
+        <li ng-repeat='message in all_messages'>
+
+          &nbsp;
+          <b>{{message.from}} </b>:
+          &nbsp;
+          {{message.message}}
+        </li>
+      </ul>
+    </div>
+</div>
+</div>
